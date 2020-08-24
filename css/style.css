@@ -1,4 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html{
+    background-color:#D8F8F8;
+}
 #preloader{
     width: 100%;
     height: 100vh;
@@ -8,3 +16,39 @@
     background-position: center;
     z-index: 10;
 }
+
+.heading{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.educator {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    justify-content: space-around;
+    height: 100vh ;
+}
+
+#first, #second{
+    height: 100vh;
+    color: white;
+}
+
+.board{
+    background: url('/assets/board.jpg') center center/cover no-repeat;
+    z-index: 10;
+    width: 750px;
+    height: 500px;
+   
+}
+
+#first{
+    background-color: lightcoral;
+}
+
+#second{
+    background-color: lightgreen;
+}
+
+
