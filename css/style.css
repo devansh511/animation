@@ -20,27 +20,31 @@ html{
 .heading{
     margin-top: 2rem;
     text-align: center;
+    font-size: 25px;
+    color: rgba(240, 134, 14, 0.897);
+    font-family: 'Raleway', sans-serif;
 }
 
 .educator {
     display: flex;
     align-items: center;
-    margin-top: 4rem;
     justify-content: space-around;
-    height: 100vh ;
+    height: 90vh ;
 }
 
 #first, #second{
     height: 100vh;
-    color: white;
+    color: #89b60e;
 }
 
 .board{
+    display: flex;
+    position: relative;
     background: url('/assets/board.jpg') center center/cover no-repeat;
-    z-index: 10;
     width: 750px;
     height: 500px;
-   
+    font-family: 'Pacifico', cursive;
+    color: rgb(251, 255, 0);
 }
 
 #first{
