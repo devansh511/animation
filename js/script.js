@@ -32,8 +32,8 @@ function letter(event) {
     board.innerText = Chars;
 
     board.style.transition = "all 0.5s linear 0s";
-    board.style.left = board.offsetLeft - 10 + 'px';
-    board.style.top= board.offsetTop - 10 + 'px';
+    board.style.left = board.offsetLeft - 12 + 'px';
+    board.style.top= board.offsetTop - 12 + 'px';
     board.style.fontSize = '50px';
     board.style.opacity = 0;
     board.style.color = colour;
