@@ -13,19 +13,20 @@ document.onkeydown = letter;
 
 function letter(event) {
     
-    console.log(event);
+    var colors = ['#8B0000', '#FFD700', '#4B0082', '#000080', '#D2691E', '#000000', '#008080', '#FF4500', '#FFFFFF'];
     var keycode = event.keyCode;
     var Chars = String.fromCharCode(keycode);
     var board = document.createElement('div');
     board.id = 'letters';
-    var parentBoard = document.getElementsByTagName('div')[3];
-
+    
+    var parentBoard = document.getElementsByTagName('div')[4];
     parentBoard.appendChild(board);
     board.style.position = 'absolute';
 
     var randX = Math.round(Math.random() * parentBoard.offsetWidth);
     var randY = Math.round(Math.random() * parentBoard.offsetHeight);
-
+    var colour = colors[Math.floor(Math.random() * colors.length)];
+    
     board.style.left = randX + 'px';
     board.style.top = randY + 'px';
     board.innerText = Chars;
@@ -35,6 +36,7 @@ function letter(event) {
     board.style.top= board.offsetTop - 10 + 'px';
     board.style.fontSize = '50px';
     board.style.opacity = 0;
+    board.style.color = colour;
 }
 
 // Human Animation

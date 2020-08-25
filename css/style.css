@@ -6,6 +6,7 @@
 
 html{
     background-color:#D8F8F8;
+    scroll-behavior: smooth;
 }
 #preloader{
     width: 100%;
@@ -69,7 +70,6 @@ a{
     width: 750px;
     height: 500px;
     font-family: 'Pacifico', cursive;
-    color: rgb(251, 255, 0);
 }
 
 #first{
