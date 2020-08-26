@@ -28,6 +28,17 @@ html{
     padding: 0.6rem 0;
 }
 
+.navbar2{
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    justify-content: center;
+    background-color: lightcoral;
+    padding: 0.6rem 0;
+    font-family: 'Pacifico', cursive;
+}
+
 ul li{
     display: inline-block;
     list-style: none;
@@ -45,7 +56,7 @@ a{
 a:hover{
     padding: 5px 10px;
     border: 1px solid #ccc;
-    transition: 0.5s;
+    transition: 0.3s;
     background-color: seashell;
     border-radius: 5px;
     color: slateblue;
