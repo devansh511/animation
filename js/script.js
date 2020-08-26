@@ -1,4 +1,4 @@
-//Preloader Function
+//Preloader 
 
 function loading() {
     
@@ -40,7 +40,8 @@ function letter(event) {
 }
 
 
-// SnowFall
+// SnowFall Animation
+
 
 function init() {
     var canvas = document.getElementById('canvas');
@@ -54,12 +55,12 @@ function init() {
 
     function snowFall() {
         ctx.clearRect(0, 0, w, h);
-        ctx.drawImage(bg, 0, 0, w , h );
-        addFlake();
+        ctx.drawImage(bg, 0, 0, w, h);
+        addFlakes();
         snow();
     };
 
-    function addFlake() {
+    function addFlakes() {
         var x = Math.ceil(Math.random() * w);
         var s = Math.ceil(Math.random() * 8);
         flakes.push({"x": x, "y" : 0, "s": s});
@@ -70,7 +71,7 @@ function init() {
         {
             var flake = flakes[i];
             ctx.beginPath();
-            ctx.fillStyle = "rgba(255,255,255,0.9)";
+            ctx.fillStyle = "rgba(255,255,255,0.6)";
             ctx.arc(flake.x, flakes[i].y+=flake.s/2, flake.s/2, 0, 2 * Math.PI);
             ctx.fill();
             if(flakes[i].y > h)
@@ -79,7 +80,7 @@ function init() {
             }
         };
     };
-    setInterval(snowFall, 20);
+    setInterval(snowFall, 40);
 };
 
 // Smooth Scroll
