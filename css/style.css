@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-html{
-    background-color:#D8F8F8;
-    scroll-behavior: smooth;
-}
 #preloader{
     width: 100%;
     height: 100vh;
@@ -42,13 +38,13 @@ a{
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-
 .heading{
-    margin-top: 2rem;
+    padding-top: 20px;
     text-align: center;
     font-size: 25px;
     color: rgba(240, 134, 14, 0.897);
     font-family: 'Raleway', sans-serif;
+    background-color:#D8F8F8;
 }
 
 .educator {
@@ -56,12 +52,9 @@ a{
     align-items: center;
     justify-content: space-around;
     height:90vh ;
+    background-color:#D8F8F8;
 }
 
-#first, #second{
-    height: 100vh;
-    color: white;
-}
 
 .board{
     display: flex;
@@ -69,14 +62,35 @@ a{
     background: url('/assets/board.png') center center/cover no-repeat;
     width: 750px;
     height: 500px;
+    font-weight: bolder;
     font-family: 'Pacifico', cursive;
+    box-shadow: 10px 10px 10px 0px #999;
+    border-radius: 15px;
 }
 
-#first{
-    background-color: lightcoral;
+/* #first{
+    height: 100vh;
+    top: 100px;
+    left: 100px;
+} */
+
+/* img{
+    height: 110vh;
+    width: 100%;
+}*/
+
+#canvas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 10px 0 #999;
+    height: 600px;
+    background-color: black;
 }
 
 #second{
+    height: 90vh;
     background-color: lightgreen;
 }
 

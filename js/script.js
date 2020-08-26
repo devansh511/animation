@@ -1,4 +1,4 @@
-// Preloader Function
+//Preloader Function
 
 function loading() {
     
@@ -7,7 +7,7 @@ function loading() {
     load.style.display = "none";
 }
 
-// KeypressAnimation
+// Keypress Animation
 
 document.onkeydown = letter;
 
@@ -39,18 +39,153 @@ function letter(event) {
     board.style.color = colour;
 }
 
+
+// SnowFall
+
+function init() {
+    var canvas = document.getElementById('canvas');
+    var w = canvas.width;
+    var h = canvas.height;
+    var ctx = canvas.getContext('2d');
+    var bg = new Image();
+    bg.src = "./assets/snowfall.jpg";
+    
+    var flakes = [];
+
+    function snowFall() {
+        ctx.clearRect(0, 0, w, h);
+        ctx.drawImage(bg, 0, 0, w , h );
+        addFlake();
+        snow();
+    };
+
+    function addFlake() {
+        var x = Math.ceil(Math.random() * w);
+        var s = Math.ceil(Math.random() * 8);
+        flakes.push({"x": x, "y" : 0, "s": s});
+    };
+
+    function snow() {
+        for(var i = 0;i < flakes.length;i++)
+        {
+            var flake = flakes[i];
+            ctx.beginPath();
+            ctx.fillStyle = "rgba(255,255,255,0.9)";
+            ctx.arc(flake.x, flakes[i].y+=flake.s/2, flake.s/2, 0, 2 * Math.PI);
+            ctx.fill();
+            if(flakes[i].y > h)
+            {
+                flakes.splice(i, 1);
+            }
+        };
+    };
+    setInterval(snowFall, 20);
+};
+
+// Smooth Scroll
+
+// function smoothScroll(target, duration) {
+//     var target = document.querySelector(target);
+//     var targetPosition = target.getBoundingClientRect().top;
+//     var startPosition = window.pageYOffset;
+//     var distance = targetPosition - startPosition;
+//     var startTime = null;
+
+//     function animation(currentTime){
+//         if(startTime === null)
+//             startTime = currentTime;
+//         var timeElapsed = currentTime - startTime;
+//         var run = ease(timeElapsed, startPosition, distance, duration);
+//         window.scrollTo(0, run);
+//         if(timeElapsed < duration)
+//             requestAnimationFrame(animation);
+//     }
+
+//     function ease(t, b, c, d) {
+//         t /= d / 2;
+//         if (t < 1)
+//             return c / 2 * t * t + b;
+//         t--;
+//         return -c / 2 * (t * (t - 2) - 1) + b; 
+//     }
+//     requestAnimationFrame(animation);
+// }
+
+// var section2 = document.querySelector('.section2');
+
+// section2.addEventListener('click', function(){
+
+//     smoothScroll('.section2', 3000);
+// });
+
 // Human Animation
 
-var r_eye = document.getElementById('right-eye');
+// var positions = ['-7', '-4',  '-1',  '2',  '5','6','3','0','-3','-6','-7'];
 
-var l_eye = document.getElementById('left-eye');
+// function moveRightEye(element) {
+    
+//     var r_eye = document.getElementById(element);
 
-var r_pupil = document.getElementById('right-pupil');
+//     positions.forEach((ele)=>{
+//         r_eye.style.transform = "translateX(" + ele + "px)";
+//         setTimeout(() => {  console.log("World!"); }, 200);
+//     });
+// }
 
-var l_pupil = document.getElementById('left-pupil');
+// function moveLeftEye(element) {
+    
+//     var l_eye = document.getElementById(element);
 
-var Face = document.getElementById('face');
+//     positions.forEach((ele)=>{
+//         l_eye.style.transform = "translateX(" + ele + "px)";
+//     });
+// }
+ 
+// document.onclick = moveRightEye('right-pupil');
+// document.onclick = moveLeftEye('left-pupil');
 
-var Neck = document.getElementById('neck');
+// setTimeout(moveRightEye,3000);
+// setTimeout(moveLeftEye,3000);
 
-var Mouth = document.getElementById('mouth');
+// let pos = 0;
+// function moveNeck(ele){
+
+//     var neck = document.getElementById(ele);
+
+//     if(pos === 0)
+//     {
+//         while(pos <= 10)
+//         {
+//             pos++;
+//             neck.style.transform = "translateY(" + pos + "px)";
+//             setTimeout(() => {  console.log("World!"); }, 50
+//             );
+//         }
+
+//         while(pos >= -10)
+//         {
+//             pos--;
+//             neck.style.transform = "translateY(" + pos + "px)";
+//             setTimeout(() => {  console.log("World!"); }, 50
+//             );
+//         }
+//     }
+//     else
+//     {
+//         while(pos <= 10)
+//         {
+//             pos++;
+//             neck.style.transform = "translateY(" + pos + "px)";
+//             setTimeout(() => {  console.log("World!"); }, 50
+//             );
+//         }
+//         while(pos >= -10)
+//         {
+//             pos--;
+//             neck.style.transform = "translateY(" + pos + "px)";
+//             setTimeout(() => {  console.log("World!"); }, 50
+//             );
+//         }
+//     }
+//     moveNeck('neck');
+// }
